@@ -1,0 +1,5 @@
+{
+  "A1001": {"status": "in_transit"},
+  "A1002": {"status": "new"},
+  "A1003": {"status": "delivered"}
+}
