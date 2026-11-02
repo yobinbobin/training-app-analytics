@@ -37,3 +37,16 @@ FROM first_week GROUP BY cohort_week, course ORDER BY cohort_week, course;
 -- 3. Weekly active learners (WAU), excluding synthetic data duplication after cleanup.
 SELECT strftime('%Y-%W', occurred_at) AS calendar_week, COUNT(DISTINCT student_id) AS active_learners
 FROM events GROUP BY strftime('%Y-%W', occurred_at) ORDER BY calendar_week;
+
+
+-- 4. Week-over-week active learners using an analytic window function.
+WITH weekly AS (
+ SELECT strftime('%Y-%W', occurred_at) AS calendar_week,
+        COUNT(DISTINCT student_id) AS wau
+ FROM events GROUP BY strftime('%Y-%W', occurred_at)
+)
+SELECT calendar_week, wau,
+       LAG(wau) OVER (ORDER BY calendar_week) AS previous_wau,
+       ROUND(100.0 * (wau - LAG(wau) OVER (ORDER BY calendar_week)) /
+         NULLIF(LAG(wau) OVER (ORDER BY calendar_week), 0), 2) AS wow_change_pct
+FROM weekly ORDER BY calendar_week;
