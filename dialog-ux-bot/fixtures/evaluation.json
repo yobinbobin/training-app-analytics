@@ -1,0 +1,19 @@
+[
+  {"message": "привет", "expected_intent": "greeting"},
+  {"message": "здравствуйте", "expected_intent": "greeting"},
+  {"message": "где мой заказ A1001", "expected_intent": "order_status"},
+  {"message": "отследить A1002", "expected_intent": "order_status"},
+  {"message": "когда доставка A1001", "expected_intent": "order_status"},
+  {"message": "отменить A1002", "expected_intent": "cancel_order"},
+  {"message": "отмена заказа A1003", "expected_intent": "cancel_order"},
+  {"message": "вернуть товар A1003", "expected_intent": "return_order"},
+  {"message": "возврат A1001", "expected_intent": "return_order"},
+  {"message": "сменить адрес A1002", "expected_intent": "change_address"},
+  {"message": "адрес доставки A1001", "expected_intent": "change_address"},
+  {"message": "оператор", "expected_intent": "operator"},
+  {"message": "живой специалист", "expected_intent": "operator"},
+  {"message": "позови оператора", "expected_intent": "operator"},
+  {"message": "моя кошка грустит", "expected_intent": "unknown"},
+  {"message": "вопрос про бонусы", "expected_intent": "unknown"},
+  {"message": "привет, где заказ A1001", "expected_intent": "order_status"}
+]
