@@ -1,0 +1,9 @@
+SYNTHETIC TRAINING APP A/B ANALYSIS
+
+Variant A: 664/2000 = 33.2000%
+Variant B: 835/2000 = 41.7500%
+Absolute difference B-A: 8.55 percentage points
+Two-sided z-test p-value: 2.33e-08
+95% confidence interval (B-A): [5.56, 11.54] percentage points
+
+IMPORTANT: data are artificially simulated. This does not show a real product improvement.
